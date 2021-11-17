@@ -155,6 +155,7 @@ class App extends Component {
       <main className="container">
       <div className="pure-g">
       <div className="pure-u-1-1">
+        <h1>Please notice that this is a proof of concept made by a backend engineer/DevOps enginner so the design is not one of my best skills </h1>
         <button onClick={this.enable.bind(this)}>Enable ethereum</button>
         <h1>Here is your info</h1>
       <p>Your first name is: {this.state.FN}</p>
@@ -183,7 +184,6 @@ class App extends Component {
       </div>
       </main>
 
-      <h1>Please notice that i'm  not a designer and i do suck at design ( Obvioulsy ) </h1>
       </div>
       );
   }
