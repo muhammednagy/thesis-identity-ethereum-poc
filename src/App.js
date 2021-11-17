@@ -57,7 +57,6 @@ class App extends Component {
 
     // Declaring this for later so we can chain functions on ethereumPassport.
     let ethereumPassportInstance;
-
     // Get accounts.
     this.state.web3.eth.getAccounts((error, accounts) => {
       ethereumPassport.deployed().then((instance) => {
@@ -83,6 +82,14 @@ class App extends Component {
     })
   }
 
+
+  enable(event) {
+    //Will Start the metamask extension
+    this.state.web3.currentProvider.request({ method: 'eth_requestAccounts' }).then(result => {
+      this.instantiateContract()
+    })
+    console.log("done")
+  }
 
   update(event) {
     const contract = this.state.contract
@@ -145,11 +152,11 @@ class App extends Component {
       <nav className="navbar pure-menu pure-menu-horizontal">
       <a href="#" className="pure-menu-heading pure-menu-link">Ethereum Passport</a>
       </nav>
-
       <main className="container">
       <div className="pure-g">
       <div className="pure-u-1-1">
-      <h1>Here is your info</h1>
+        <button onClick={this.enable.bind(this)}>Enable ethereum</button>
+        <h1>Here is your info</h1>
       <p>Your first name is: {this.state.FN}</p>
       <p>Your ID is: {this.state.Id}</p>
       <p>Your Last name is: {this.state.LN}</p>
