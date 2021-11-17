@@ -29,6 +29,7 @@
     "file-loader": "0.9.0",
     "filesize": "3.3.0",
     "fs-extra": "0.30.0",
+    "gh-pages": "^3.2.3",
     "gzip-size": "3.0.0",
     "html-webpack-plugin": "2.24.0",
     "http-proxy-middleware": "0.17.2",
@@ -57,18 +58,12 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/muhammednagy/EthPassport.git"
+    "test": "node scripts/test.js --env=jsdom",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/muhammednagy/EthPassport/issues"
-  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
@@ -87,6 +82,7 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
+    "homepage": "https://e-identity.muhnagy.com",
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
     ],
