@@ -1,4 +1,6 @@
 var HDWalletProvider = require("@truffle/hdwallet-provider");
+// This is a wallet that holds no real value.
+// I left it here just for testing purposes
 var mnemonic = "tent twist kid useless beach antique aunt arm jump asset actor industry"; //put your mnemonic for the account that will deploy the contract to rinkeby here
 
 module.exports = {
@@ -15,6 +17,7 @@ module.exports = {
     },
     kovan: {
       provider: function() {
+        // this token is invalid
         return new HDWalletProvider({mnemonic, providerOrUrl: "https://ropsten.infura.io/v3/4fc22c6bf21241e3b74cdf1e7b0a6743"}) //enter you API key here
       },
       network_id:3

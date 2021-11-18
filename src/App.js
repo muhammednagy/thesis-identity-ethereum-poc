@@ -104,12 +104,9 @@ class App extends Component {
     if (this.state.FN != null) {
       console.log("test1")
       contract.update(FN, LN, BD, citizenship, CountryOfBirth,{ from: account })
-          console.log("test")
       .then(result => {
         return contract.myPassport.call({ from: account })
       }).then(result => {
-        console.log("test")
-        console.log(result)
         return this.setState({FN: result[1], LN: result[2], BD: result[3], citizenship: result[4], CountryOfBirth: result[5]})
       })
     } else {
