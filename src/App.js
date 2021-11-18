@@ -137,7 +137,7 @@ class App extends Component {
     if (this.state.FN != null) {
       contract.auth(account, Id, FN, LN,{ from: account })
       .then(result => {
-        return alert("You are authenticate")
+        return alert("You are authenticated")
       })
     } else {
       alert("Please add your data first")
