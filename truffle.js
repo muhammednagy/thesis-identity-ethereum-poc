@@ -15,7 +15,7 @@ module.exports = {
       port: 8545,
       network_id: "*"
     },
-    kovan: {
+    ropsten: {
       provider: function() {
         // this token is invalid
         return new HDWalletProvider({mnemonic, providerOrUrl: "https://ropsten.infura.io/v3/4fc22c6bf21241e3b74cdf1e7b0a6743"}) //enter you API key here

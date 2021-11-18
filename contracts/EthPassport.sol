@@ -79,9 +79,9 @@ contract EthPassport is Ownable, Pausable {
         return  passports[msg.sender].isSet;
     }
     
-    function auth(uint Id, string FN, string LN) view public returns (bool) {
+    function auth(address sender, uint Id, string FN, string LN) view public returns (bool) {
         /** authenticate user and match his info */
-        require(compareStrings(passports[msg.sender].FN,FN) && compareStrings(passports[msg.sender].LN,LN) &&  passports[msg.sender].Id == Id);
+        require(compareStrings(passports[sender].FN,FN) && compareStrings(passports[sender].LN,LN) &&  passports[sender].Id == Id);
         return true;
     }
 }
